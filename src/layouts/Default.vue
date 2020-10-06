@@ -12,7 +12,7 @@
 
       </nav>
     </header> -->
-    <div class="w-full pt-16">
+    <div class="w-full pt-24">
       <slot />
     </div>
   </div>
@@ -36,6 +36,8 @@ export default {
 </script>
 
 <style>
+
+
 
 .layout {
   max-width: 100vw;

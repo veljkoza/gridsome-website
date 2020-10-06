@@ -38,6 +38,12 @@ module.exports = {
       margin: {
         half: "50%"
       },
+      padding:{
+        "10rem":"10rem",
+        "8rem":"8rem",
+        "6rem":"6rem"
+
+      },
       height: {
         "589px": "589px",
         "80": "20rem",
