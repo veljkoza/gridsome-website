@@ -1,6 +1,6 @@
 <template>
   <header
-    class="flex items-center justify-between flex-wrap bg-gray-800 p-6 mb-6 fixed w-full"
+    class="flex items-center justify-between flex-wrap bg-gray-800 p-6 fixed w-full"
   >
     <div class="flex flex-no-shrink items-center text-white mr-6">
       <span class="font-bold text-xl"><g-link to="/"> Website</g-link> </span>

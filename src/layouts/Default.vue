@@ -12,7 +12,7 @@
 
       </nav>
     </header> -->
-    <div class="w-full pt-24">
+    <div class="w-full pt-16">
       <slot />
     </div>
   </div>
