@@ -7,11 +7,13 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
+    "autoprefixer": "^10.0.1",
     "gridsome": "^0.7.0",
     "tailwindcss": "^1.8.10"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^3.0.0",
+    "gridsome-plugin-tailwindcss": "^3.0.1",
     "pngquant": "^3.1.0"
   }
 }
