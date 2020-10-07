@@ -15,6 +15,7 @@
     <div class="w-full pt-24">
       <slot />
     </div>
+    <Footer/>
   </div>
 </template>
 
@@ -27,10 +28,11 @@ query {
 </static-query>
 <script>
 import Header from "../components/Header";
-
+import Footer from "../components/Footer"
 export default {
   components: {
     Header,
+    Footer
   },
 };
 </script>

@@ -26,7 +26,7 @@
       </div>
     </div> -->
     <h1 class="text-2xl text-center mb-4">Test page</h1>
-    <div class="container p-3 m-auto md:flex">
+    <div class="container p-3 m-auto md:flex h-screen">
 
     <Card/>
     <Card/>
