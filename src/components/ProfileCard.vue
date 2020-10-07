@@ -1,6 +1,6 @@
 <template>
   <div
-    class="card md:flex sm:whitespace-no-wrap bg-white cursor-pointer animate w-full sm:justify-center p-2 rounded-lg shadow-lg"
+    class="card md:flex sm:whitespace-no-wrap bg-white cursor-pointer animate w-full sm:justify-center p-2 rounded-lg shadow-lg h-589px"
   >
     <g-image
       src="@/assets/profile.png"

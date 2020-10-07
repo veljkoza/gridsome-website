@@ -1,6 +1,6 @@
 <template>
   <header
-    class="flex items-center justify-between flex-wrap bg-gray-800 p-6 fixed w-full max-w-full z-20"
+    class="flex items-center justify-between flex-wrap bg-secondary border-b-4 border-primary p-6 fixed w-full max-w-full z-20"
   >
     <div class="flex flex-no-shrink items-center text-white mr-6">
       <span class="font-bold text-xl"><g-link to="/"> Website</g-link> </span>
@@ -27,9 +27,14 @@
           class="no-underline mr-4 block mt-4 sm:inline-block sm:mt-0 text-teal hover:text-teal-200"
            to="/test2/">Test2</g-link
         >
+        
         <g-link
           class="no-underline mr-4 block mt-4 sm:inline-block sm:mt-0 text-teal hover:text-teal-200"
-           to="/sample-landing/">Landing</g-link
+           to="/improved-card/">Improved Card</g-link
+        >
+        <g-link
+          class="no-underline mr-4 block mt-4 sm:inline-block sm:mt-0 text-teal hover:text-teal-200"
+           to="/icon-card/">Icon Card</g-link
         >
       </div>
     </div>

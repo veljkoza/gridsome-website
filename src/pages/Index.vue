@@ -54,48 +54,113 @@
             inventore eligendi?
           </p>
         </div>
-        <div class="w-4/6 mt-10 md:mt-0 mx-auto md:w-1/2">
+        <div class="w-4/6 mt-10 md:mt-0 mx-auto md:w-1/2 phone">
           <g-image src="../assets/tablet.png" class=""></g-image>
         </div>
       </div>
       <div class="hidden w-screen md:flex justify-center align-middle z-10">
-        <g-image src="../assets/icons/scroll.svg"></g-image>
+        <g-image
+          id="scroll"
+          src="../assets/icons/scroll.svg"
+          class="animate-bounce"
+        ></g-image>
       </div>
     </section>
-    <section class="md:h-screen bg-secondary w-full">
-      <div class="container mx-auto flex flex-col pt-16 text-xl md:pt-0 ">
-        <div class="mx-auto mb-8">
+    <section class="md:h-auto bg-secondary w-full">
+      <div class="container mx-auto flex flex-col text-xl pt-8 md:pt-8">
+        <div class="mx-auto mb-8 w-3/4 text-center">
           <h1 class="text-2xl md:text-5xl text-white font-black leading-none">
-            Our team
+            Our <span class="text-primary">Articles</span>
           </h1>
         </div>
-        <div class="flex flex-col p-4 md:p-0 md:flex-row gap-2">
-          <Card/>
-          <Card/>
-          <Card/>
+        <div class="flex flex-wrap mx-auto py-4">
+          <ImprovedCard />
+          <ImprovedCard />
+          <ImprovedCard />
+          <ImprovedCard />
+          <ImprovedCard />
+          <ImprovedCard />
 
         </div>
-
       </div>
     </section>
-    <section class="md:h-screen bg-secondary w-full bg-gradient-to-b from-secondary to-primary"></section>
-
+    <section class="h-screen bg-gradient-to-b from-secondary to-primary">
+      <div class="container mx-auto flex flex-col md:pt-8">
+        <div
+          class="mx-auto mb-8 w-3/4 text-center border-t-2 border-primary pt-12"
+        >
+          <h1
+            class="block text-2xl md:text-5xl text-white font-black leading-relaxed"
+          >
+            About <span class="text-primary">Us</span>
+          </h1>
+          <p class="block font-hairline text-gray-100">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+            soluta illo deserunt sed corrupti laboriosam asperiores voluptates
+            natus doloremque consectetur possimus magni deleniti nesciunt aut
+            accusamus consequuntur, doloribus architecto error. Architecto
+            adipisci, eaque quae deserunt magni molestiae asperiores laborum et
+            consectetur odio! Eligendi commodi ipsa fuga aperiam blanditiis?
+            Reprehenderit esse nostrum distinctio vero repellendus perferendis
+            velit officiis, cumque vel blanditiis. Nihil, asperiores ullam quod
+            ea inventore vel, illum reprehenderit sint eos minima, cum iusto
+            ipsa est laudantium!
+          </p>
+        </div>
+        <div class="flex flex-wrap justify-center pt-8">
+          <IconCard>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="80"
+              height="80"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="teal"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-activity"
+            >
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+          </IconCard>
+          <IconCard>
+            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="teal" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg>
+          </IconCard>
+          <IconCard>
+            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="teal" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart"><line x1="12" y1="20" x2="12" y2="10"></line><line x1="18" y1="20" x2="18" y2="4"></line><line x1="6" y1="20" x2="6" y2="16"></line></svg>
+          </IconCard>
+        </div>
+      </div>
+    </section>
   </Layout>
 </template>
 
 <script>
-import Card from "../components/ProfileCard"
+import IconCard from "../components/IconCard";
+import Card from "../components/ProfileCard";
+import ImprovedCard from "../components/ImprovedCard";
 export default {
   metaInfo: {
     title: "Hello, world!",
   },
-  components:{
-    Card
-  }
+  components: {
+    Card,
+    ImprovedCard,
+    IconCard,
+  },
 };
 </script>
 
 <style lang="css">
+.phone {
+  transition: transform 0.2s ease-in-out;
+}
+
+.phone:hover {
+  transform: rotate(4deg);
+}
+
 .path-cutter {
   position: absolute;
   width: 100%;
@@ -112,28 +177,27 @@ export default {
   transform: rotate(45deg) scale(7);
 }
 
-.custom-shape.front{
+.custom-shape.front {
   left: 1%;
   transform: rotate(38deg) scale(7);
   z-index: 0;
 }
 
-.custom-shape{
-animation: move 15s ease-in-out  infinite;
-animation-direction: alternate;
+.custom-shape {
+  animation: move 15s ease-in-out infinite;
+  animation-direction: alternate;
 }
 
-.custom-shape.front{
+.custom-shape.front {
   animation-direction: alternate-reverse;
 }
 
 @keyframes move {
-  0%{
+  0% {
     left: 0;
   }
-  100%{
+  100% {
     left: 30vw;
-
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="container flex-1 max-w-md min-w-full">
+    <div class="container h-589px">
         <div class="md:flex">
             <div class="md:flex-shrink-0">
                 <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=448&q=80" alt="" class="rounded-lg md:w-64">
