@@ -67,7 +67,9 @@
       </div>
     </section>
     <section class="md:h-auto bg-secondary w-full">
-      <div class="container mx-auto flex flex-col text-xl pt-8 md:pt-8">
+      <div
+        class="container mx-auto flex flex-col text-xl pt-8 px-2 md:px-0 md:pt-8"
+      >
         <div class="mx-auto mb-8 w-3/4 text-center">
           <h1 class="text-2xl md:text-5xl text-white font-black leading-none">
             Our <span class="text-primary">Articles</span>
@@ -80,12 +82,11 @@
           <ImprovedCard />
           <ImprovedCard />
           <ImprovedCard />
-
         </div>
       </div>
     </section>
-    <section class="h-screen bg-gradient-to-b from-secondary to-primary">
-      <div class="container mx-auto flex flex-col md:pt-8">
+    <section class="h-auto bg-gradient-to-b from-secondary to-primary">
+      <div class="container mx-auto flex flex-col pb-8 md:pt-8">
         <div
           class="mx-auto mb-8 w-3/4 text-center border-t-2 border-primary pt-12"
         >
@@ -107,7 +108,7 @@
             ipsa est laudantium!
           </p>
         </div>
-        <div class="flex flex-wrap justify-center pt-8">
+        <div class="flex flex-wrap justify-center">
           <IconCard>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -125,11 +126,88 @@
             </svg>
           </IconCard>
           <IconCard>
-            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="teal" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="80"
+              height="80"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="teal"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-airplay"
+            >
+              <path
+                d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"
+              ></path>
+              <polygon points="12 15 17 21 7 21 12 15"></polygon>
+            </svg>
           </IconCard>
           <IconCard>
-            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="teal" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart"><line x1="12" y1="20" x2="12" y2="10"></line><line x1="18" y1="20" x2="18" y2="4"></line><line x1="6" y1="20" x2="6" y2="16"></line></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="80"
+              height="80"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="teal"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-bar-chart"
+            >
+              <line x1="12" y1="20" x2="12" y2="10"></line>
+              <line x1="18" y1="20" x2="18" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="16"></line>
+            </svg>
           </IconCard>
+        </div>
+      </div>
+    </section>
+    <section class="h-auto bg-gradient-to-b from-primary to-secondary">
+      <div class="container mx-auto pb-8">
+        <div
+          class="w-3/4 text-center mx-auto font-black border-t-2 border-secondary pt-12"
+        >
+          <h1 class="text-2xl md:text-5xl text-secondary">Contact Us</h1>
+          <div class="bg-secondary py-6 px-8 rounded-lg flex flex-row mt-4">
+            <form class="flex flex-col mr-4 w-full">
+              <div @keyup="movePlaceholder" class="relative">
+                <input
+                  type="text"
+                  placeholder="Name"
+                  class="rounded-lg my-3 p-2 w-full"
+                />
+
+                <span class="absolute placeholder text-left font-light"
+                  >Name</span
+                >
+              </div>
+              <div @keyup="movePlaceholder" class="relative">
+                <input
+                  type="text"
+                  placeholder="Last name"
+                  class="rounded-lg my-3 p-2 w-full"
+                />
+
+                <span class="absolute placeholder text-left font-light"
+                  >Last name</span
+                >
+              </div>
+              <div @keyup="movePlaceholder" class="relative">
+                <input
+                  type="text"
+                  placeholder="Email"
+                  class="rounded-lg my-3 p-2 w-full"
+                />
+
+                <span class="absolute placeholder text-left font-light"
+                  >Email</span
+                >
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </section>
@@ -149,10 +227,56 @@ export default {
     ImprovedCard,
     IconCard,
   },
+  methods: {
+    movePlaceholder(event) {
+      const spanToMove = event.path[1].children[1];
+      const input = event.target.value;
+      console.log(input.length);
+      
+      if (spanToMove.classList.contains("move")) {
+        console.log("test1");
+        if (input.length === 0) {
+          console.log("test");
+          spanToMove.classList.remove("move");
+          return;
+        }
+        return;
+      }
+      if(input.length===0 && event.keyCode === 8){
+        return;
+      }
+
+      spanToMove.classList.add("move");
+    },
+  },
 };
 </script>
 
 <style lang="css">
+.move {
+  animation: move-placeholder 0.2s ease-in-out forwards;
+}
+
+@keyframes move-placeholder {
+  0% {
+    z-index: 0;
+    top: 20px;
+    opacity: 0;
+  }
+  100% {
+    top: -12px;
+    opacity: 1;
+    z-index: 1;
+    color: white;
+  }
+}
+
+.placeholder {
+  z-index: -1;
+  left: 8px;
+  top: 20px;
+}
+
 .phone {
   transition: transform 0.2s ease-in-out;
 }
